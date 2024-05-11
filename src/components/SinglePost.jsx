@@ -8,7 +8,7 @@ export default function SinglePost() {
  
 
   return (
-    <div className="singlePost theme">
+    <div className="singlePost">
       <div className="singlePostWrapper">
           <img src={Image} alt="" className="singlePostImg" />
           <h1 className="singlePostTitle">

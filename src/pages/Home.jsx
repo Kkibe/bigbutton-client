@@ -71,35 +71,42 @@ const testimonials = [
     {
         id: 1,
         img: Editor,
-        name: "",
-        title: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        description: " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        name: "John Doe",
+        title: "CEO - Google.com",
+        description: " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
     },
     {
         id: 2,
         img: Editor,
-        name: "",
-        title: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        description: " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        name: "Tommy Lee",
+        title: "Instagram Model",
+        description: " Lorem Ipsum: an unknown printer took a galley of type and scrambled it to make a type specimen book."
     },
     {
         id: 3,
         img: Editor,
-        name: "",
-        title: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        description: " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        name: "Sarah Jane",
+        title: "Full stack dev - Amazon",
+        description: " Lorem Ipsum has been standard dummy a galley and scrambled to make a type specimen book."
+    },
+    {
+        id: 4,
+        img: Editor,
+        name: "Tommy Lee",
+        title: "Lorem Ipsum is simply dummy text.",
+        description: " Lorem Ipsum: an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+        id: 5,
+        img: Editor,
+        name: "Sarah Jane",
+        title: "Printing and typesetting industry.",
+        description: " Lorem Ipsum has been standard dummy a galley and scrambled to make a type specimen book."
     },
 ]
 
 
 const Home = ({data}) => {
-    const [popular, setPopular] = useState([]);
-
-    useEffect(() => {
-        setPopular(data);
-        console.log(popular)
-        
-    }, []) 
     const [slideIndex, setSlideIndex] = useState(0);
     const handleClick = (direction) => {
         if(direction === "left") {
@@ -143,6 +150,7 @@ const Home = ({data}) => {
             </div>
 
             <div className="featuredproducts">
+                <h1>Editor's Pick</h1>
                 {
                     products && products.map(product => {
                         return (
@@ -172,23 +180,23 @@ const Home = ({data}) => {
                 <h1>Popular Posts 🔥</h1>
                 <div className='wrapper'>
                     {
-                        popular && popular.map((post) => {
+                        data && data.map((post) => {
                             return (
-                                <div className='post theme' key={post.title}>
+                                <div className='post' key={post.title}>
                                     <div className='image-container'>
-                                        <img src={post.image_url} alt=""/>
+                                        <img src={post.thumbnail} alt=""/>
                                     </div>
                                     <div className='content'>
-                                        <h3>
-                                           <a className='link' href="#">{post.title}</a>
-                                        </h3>
+                                        <h2>
+                                           <a className='link' href={post.url}>{post.title}</a>
+                                        </h2>
                                         <p>
-                                           {post.description}
+                                           {post.title}
                                         </p>
                                         <span>
-                                           <i class="fa fa-clock-o"></i>{new Date(post.pubDate).toDateString()}
+                                           <i class="fa fa-clock-o"></i>{new Date(post.posted).toDateString()}
                                         </span>
-                                       <a href={post.link} className='readmore'>READ MORE</a>
+                                       <a href={post.sourceUrl} className='readmore'>READ MORE</a>
                                     </div>
                                 </div>
                             )
@@ -202,10 +210,13 @@ const Home = ({data}) => {
                     {
                         testimonials && testimonials.map(testimonial => {
                             return (
-                                <div className='testimonial theme'>
-                                    <img src={testimonial.img} alt=""/>
+                                <div className='testimonial'>
+                                    <span>
+                                        <img src={testimonial.img} alt=""/>
+                                        <h2 id='name'>{testimonial.name}</h2>
+                                    </span>
+                                    
                                     <div className='content'>
-                                        <h5 id='name'>{testimonial.name}</h5>
                                         <h1 >{testimonial.title}</h1>
                                         <p>
                                             {testimonial.description}

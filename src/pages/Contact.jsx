@@ -1,7 +1,7 @@
 import React from 'react';
-const About = () => {
+const Contact = () => {
     return (
-        <div class="about">
+        <div class="contact">
           <h1>Contact us</h1>
             <form>
               <div className="input-container">
@@ -14,4 +14,4 @@ const About = () => {
      </div>
     );
 }
-export default About;
+export default Contact;

@@ -10,29 +10,29 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Blogs from "./pages/Blogs";
 import Products from './pages/Products';
-import About from './pages/About';
+import Contact from './pages/Contact';
+import SinglePost from './components/SinglePost';
 
 function App() {
-
   const [data, setData] = useState([]);
-
-  const handleFetch = () => {
-    const api_key = 'pub_1237237f365d7ff387104765b2874bb6ca618';
-
-    axios.get(`https://newsdata.io/api/1/news?apikey=${api_key}&category=technology,science&language=en&page=1`)
-    .then(results => {
-        console.log(results);
-        setData(results.data.results);
-    }).catch(error => {
-        console.log(error);
-    })
-
-
-}
-
-useEffect(()=>{
-    handleFetch()
-}, [])
+  const options = {
+    method: 'GET',
+    url: 'https://programmer-humor.p.rapidapi.com/api/9gag',
+    params: {after: '5'},
+    headers: {
+      'X-RapidAPI-Key': '248e1e5f8dmsh14dc10a7ebcfcc8p17485cjsn9632aa772b2d',
+      'X-RapidAPI-Host': 'programmer-humor.p.rapidapi.com'
+    }
+  };
+  
+  useEffect(() => {
+    axios.request(options).then((response) => {
+        setData(response.data)
+        console.log(response.data)
+    }).catch((error) => {
+        console.error(error);
+    });
+  }, [window.onload]);
   return (
     <div className='app'>
         <Topbar />
@@ -40,7 +40,8 @@ useEffect(()=>{
             <Route path="/" element={<Home data={data}/>}/>
             <Route path="/products" element={<Products />}/>
             <Route path="/read" element={<Blogs data={data}/>}/>
-            <Route path="/about" element={<About />}/>
+            <Route path="/read/:id" element={<SinglePost/>}/>
+            <Route path="/contact" element={<Contact />}/>
       </Routes>
       <Newsletter />
       <Footer />

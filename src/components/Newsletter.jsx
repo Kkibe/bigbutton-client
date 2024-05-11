@@ -3,10 +3,10 @@ import React from 'react';
 
 const Newsletter = () => {
     return (
-        <div className='newsletter theme'>
-            <h1>
+        <div className='newsletter'>
+            <h2>
                 Subscribe
-            </h1>
+            </h2>
             <p>
                 Don’t miss to subscribe to our new feeds, kindly fill the form below.
             </p>

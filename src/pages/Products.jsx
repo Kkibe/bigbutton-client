@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import DefineAI from '../assets/DefineAI.png';
-import Editor from "../assets/editor.png";
+import Editor from "../assets/Editor.png";
 import Coongames from "../assets/coongames.png";
 import Upcider from "../assets/upcider.png";
 
@@ -184,9 +184,9 @@ const Products = () => {
                     <img src={Coongames} alt="" />
                 </section>
                 <section>
-                    <h2>
+                    <h1>
                       COONGAMES
-                    </h2>
+                    </h1>
                     <p>
                        Play Unlimited Games Interractively
                     </p>
@@ -208,7 +208,7 @@ const Products = () => {
                             </div>
         
                             <div className="content">
-                                <h1>{item.title}</h1>
+                                <h2>{item.title}</h2>
                                 <p>{item.desc}</p>
                             </div>
                             <button>Learn more &raquo;</button>

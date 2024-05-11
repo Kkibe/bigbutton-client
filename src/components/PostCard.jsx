@@ -1,24 +1,24 @@
 import React from "react";
-import { Link} from "react-router-dom";
 import Image from '../assets/coongames.png'
+import { Link } from "react-router-dom";
 
 export default function PostCard({data}) {
   return (
     <div className="post-card" >
-      <a href={data.link} target="_blank" title={data.source_id} className="link">{data.title}</a>
+      <Link to={data.link} target="_blank" title={data.source_id} className="link">{data.title}</Link>
       <div className="image-container">
-        <img src={data.image_url ? data.image_url : Image } alt="" />
+        <img src={data.thumbnail ? data.thumbnail : Image } alt={data.name} />
       </div>
       <div className="content">
         <h1>{data.title}</h1>
         <p>
-          {data.description}
+          {data.content}
         </p>
       </div>
-
+      
       <div className="info">
-        <span>{new Date(data.pubDate).toDateString()}</span>
-        <div>By <span>{data.creator ? data.creator : data.source_id}</span></div>
+        <span>{new Date(data.posted).toDateString()}</span>
+        <div>By <span>{data.source ? data.source : "user_null"}</span></div>
       </div>
     </div>
   );

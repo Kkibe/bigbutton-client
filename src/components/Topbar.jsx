@@ -1,57 +1,30 @@
-import {DarkMode} from '@mui/icons-material';
-import React, { useEffect } from 'react';
+import {DarkMode, MenuOpen, MenuOutlined} from '@mui/icons-material';
+import React from 'react';
 import Logo from '../assets/logo.png';
 import { useState } from 'react';
 import {
-    Link
+    Link,
+    NavLink
   } from "react-router-dom";
 
 
 const Topbar = () => {
-    const [theme, setTheme] = useState("light");
+    const [open, setOpen] = useState(false);
 
-    const handleChange = () => {
-        const body = document.querySelector('.app');
-        const top = document.querySelector('.topbar');
-        if(theme === "light") {
-            body.classList.remove('dark-theme');
-            top.style.background = "white";
-        } else {
-            body.classList.add('dark-theme');
-            top.style.background = "black";
-        }
-    }
-
-    const handleTheme= () => {
-        if(theme === "light") {
-            setTheme("dark");
-        } else setTheme("light");
-
-    }
-
-
-
-    useEffect(() => {
-        handleChange();
-    }, [theme])
     return (
-        <div className='topbar theme'>
-            
+        <div className='topbar'>
             <Link to="/" className='logo'>
                     <img src={Logo}/>
             </Link> 
             <div className='navlinks'>
-                <Link to="/" className='link'>Home</Link>
-                <Link to="/products" className='link'>Products</Link>
-                <Link to="/read" className='link'>Blogs</Link>
-                <Link to="/about" className='link'>About</Link>
+                <NavLink to="/" className='link' end>Home</NavLink>
+                <NavLink to="/products" className='link' end>Products</NavLink>
+                <NavLink to="/read" className='link' end>Blogs</NavLink>
+                <NavLink to="/contact" className='link' end>Contact Us</NavLink>
             </div>
-            <div className='search'>
-                <input type="text" placeholder="Search"/>
-            </div>
-            <DarkMode style={{
-                color: "#ffbd59"
-            }}  onClick = {handleTheme}/>
+            {
+                open ? <MenuOpen className='menu-open' onClick={() => setOpen(!open)}/>: <MenuOutlined className='menu-icon' onClick={() => setOpen(!open)}/>
+            }
 
         </div>
     );
