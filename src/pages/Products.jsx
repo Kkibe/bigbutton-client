@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import DefineAI from '../assets/DefineAI.png';
-import Editor from "../assets/Editor.png";
+import Editor from "../assets/editor.png";
 import Coongames from "../assets/coongames.png";
 import Upcider from "../assets/upcider.png";
 
