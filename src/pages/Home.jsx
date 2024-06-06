@@ -4,7 +4,7 @@ import Upcider from '../assets/upcider.png';
 
 //slides
 import DefineAI from '../assets/DefineAI.png';
-import Editor from "../assets/Editor.png";
+import Editor from "../assets/editor.png";
 import Smartchat from "../assets/Smartchat.png";
 
 import Bigplay from "../assets/Bigplay.png";
