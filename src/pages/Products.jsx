@@ -5,7 +5,7 @@ import Editor from "../assets/editor.png";
 import Coongames from "../assets/coongames.png";
 import Upcider from "../assets/upcider.png";
 
-import Bigplay from "../assets/Bigplay.png";
+import Bigplay from "../assets/bigplay.png";
 import Bigshare from "../assets/Bigshare.png";
 import Codespear from '../assets/Codespear.png';
 
@@ -19,7 +19,7 @@ const Data = [
         category: "productivity",
         products: [
             {
-                id:1,
+                id: 1,
                 name: "Smartchat",
                 title: "Upcider for freelancers.",
                 img: Smartchat,
@@ -28,7 +28,7 @@ const Data = [
             },
 
             {
-                id:2,
+                id: 2,
                 name: "Bigplay",
                 title: "Upcider for freelancers",
                 img: Bigplay,
@@ -37,7 +37,7 @@ const Data = [
             },
 
             {
-                id:3,
+                id: 3,
                 name: "Bigshare",
                 title: "Upcider for freelancers",
                 img: Bigshare,
@@ -46,7 +46,7 @@ const Data = [
             },
 
             {
-                id:4,
+                id: 4,
                 name: "DefineAI",
                 title: "Upcider for freelancers",
                 img: DefineAI,
@@ -55,7 +55,7 @@ const Data = [
             },
 
             {
-                id:5,
+                id: 5,
                 name: "Healthgen",
                 title: "Upcider for freelancers",
                 img: Healthgen,
@@ -64,7 +64,7 @@ const Data = [
             },
 
             {
-                id:6,
+                id: 6,
                 name: 'Upcider',
                 title: "Upcider for freelancers",
                 img: Upcider,
@@ -78,7 +78,7 @@ const Data = [
         category: "developer-tools",
         products: [
             {
-                id:1,
+                id: 1,
                 name: "Deveditor",
                 title: "Upcider for freelancers",
                 img: Editor,
@@ -86,7 +86,7 @@ const Data = [
                 link: "#",
             },
             {
-                id:2,
+                id: 2,
                 name: "Codespear",
                 title: "Upcider for freelancers",
                 img: Codespear,
@@ -94,7 +94,7 @@ const Data = [
                 link: "#",
             },
             {
-                id:3,
+                id: 3,
                 name: "Coinblock",
                 title: "Upcider for freelancers",
                 img: Adblocker,
@@ -108,7 +108,7 @@ const Data = [
         category: "browser-tools",
         products: [
             {
-                id:1,
+                id: 1,
                 name: 'Upcider',
                 title: "Upcider for freelancers",
                 img: Adblocker,
@@ -116,7 +116,7 @@ const Data = [
                 link: "#",
             },
             {
-                id:2,
+                id: 2,
                 name: 'Upcider',
                 title: "Upcider for freelancers",
                 img: Adblocker,
@@ -124,7 +124,7 @@ const Data = [
                 link: "#",
             },
             {
-                id:3,
+                id: 3,
                 name: 'Upcider',
                 title: "Upcider for freelancers",
                 img: Adblocker,
@@ -132,7 +132,7 @@ const Data = [
                 link: "#",
             },
             {
-                id:4,
+                id: 4,
                 name: 'Upcider',
                 title: "Upcider for freelancers",
                 img: Adblocker,
@@ -140,7 +140,7 @@ const Data = [
                 link: "#",
             },
             {
-                id:5,
+                id: 5,
                 name: 'Upcider',
                 title: "Upcider for freelancers",
                 img: Adblocker,
@@ -148,7 +148,7 @@ const Data = [
                 link: "#",
             },
             {
-                id:6,
+                id: 6,
                 name: 'Upcider',
                 title: "Upcider for freelancers",
                 img: Adblocker,
@@ -156,7 +156,7 @@ const Data = [
                 link: "#",
             },
             {
-                id:7,
+                id: 7,
                 name: 'Upcider',
                 title: "Upcider for freelancers",
                 img: Adblocker,
@@ -164,7 +164,7 @@ const Data = [
                 link: "#",
             },
             {
-                id:8,
+                id: 8,
                 name: 'Upcider',
                 title: "Upcider for freelancers",
                 img: Adblocker,
@@ -185,10 +185,10 @@ const Products = () => {
                 </section>
                 <section>
                     <h1>
-                      COONGAMES
+                        COONGAMES
                     </h1>
                     <p>
-                       Play Unlimited Games Interractively
+                        Play Unlimited Games Interractively
                     </p>
 
                     <button>
@@ -206,14 +206,14 @@ const Products = () => {
                             <div className="image-container">
                                 <img src={`${item.img}`} alt="" />
                             </div>
-        
+
                             <div className="content">
                                 <h2>{item.title}</h2>
                                 <p>{item.desc}</p>
                             </div>
                             <button>Learn more &raquo;</button>
                         </div>
-                        
+
                     })
                 }
 
@@ -224,15 +224,15 @@ const Products = () => {
             <div className='wrapper'>
                 {
                     Data[1].products.map(item => {
-                        return  <div className='item' id={item.id}>
+                        return <div className='item' id={item.id}>
                             <div className='image-container'>
-                                <img src={item.img} alt=''/>
+                                <img src={item.img} alt='' />
                             </div>
                             <div className='content'>
                                 <h2>{item.title}</h2>
                                 <p>{item.desc}</p>
-                    </div>
-                </div>
+                            </div>
+                        </div>
                     })
                 }
             </div>

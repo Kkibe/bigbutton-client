@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from  'react';
-import { ArrowLeftOutlined, ArrowRightOutlined  } from '@mui/icons-material';
+import React, { useEffect, useState } from 'react';
+import { ArrowLeftOutlined, ArrowRightOutlined } from '@mui/icons-material';
 import Upcider from '../assets/upcider.png';
 
 //slides
@@ -7,7 +7,7 @@ import DefineAI from '../assets/DefineAI.png';
 import Editor from "../assets/editor.png";
 import Smartchat from "../assets/Smartchat.png";
 
-import Bigplay from "../assets/Bigplay.png";
+import Bigplay from "../assets/bigplay.png";
 import Bigshare from "../assets/Bigshare.png";
 import Codespear from '../assets/Codespear.png';
 
@@ -33,7 +33,7 @@ const slides = [
         description: "Share Your Files and Images Across Your Browser Safely",
         link: ""
     }
-    
+
 ]
 
 const products = [
@@ -106,10 +106,10 @@ const testimonials = [
 ]
 
 
-const Home = ({data}) => {
+const Home = ({ data }) => {
     const [slideIndex, setSlideIndex] = useState(0);
     const handleClick = (direction) => {
-        if(direction === "left") {
+        if (direction === "left") {
             setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2)
         } else {
             setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0)
@@ -121,11 +121,11 @@ const Home = ({data}) => {
         <div className="home page">
             <div className="slider">
 
-                <div className="arrow"  onClick={() => handleClick("left")}>
-                   <ArrowLeftOutlined />
+                <div className="arrow" onClick={() => handleClick("left")}>
+                    <ArrowLeftOutlined />
                 </div>
 
-                   <div className="wrapper" style={{transform: `translateX(${slideIndex * -100}vw)`}}>
+                <div className="wrapper" style={{ transform: `translateX(${slideIndex * -100}vw)` }}>
                     {
                         slides && slides.map(slide => {
                             return (
@@ -136,16 +136,16 @@ const Home = ({data}) => {
                                     <div className="info">
                                         <h1>{slide.title}</h1>
                                         <p>{slide.description}</p>
-                                       <button>Visit Now</button>
+                                        <button>Visit Now</button>
                                     </div>
                                 </div>
                             )
                         })
                     }
-                   </div>
+                </div>
 
                 <div className="arrow" onClick={() => handleClick("right")}>
-                   <ArrowRightOutlined />
+                    <ArrowRightOutlined />
                 </div>
             </div>
 
@@ -156,7 +156,7 @@ const Home = ({data}) => {
                         return (
                             <section>
                                 <div className='image-container'>
-                                    <img src={product.img} alt="file-share"/>
+                                    <img src={product.img} alt="file-share" />
                                 </div>
                                 <div className='wrapper' >
                                     <a href='#' className='title'>
@@ -174,7 +174,7 @@ const Home = ({data}) => {
                     })
                 }
             </div>
-    
+
 
             <div className='popularposts'>
                 <h1>Popular Posts 🔥</h1>
@@ -184,25 +184,25 @@ const Home = ({data}) => {
                             return (
                                 <div className='post' key={post.title}>
                                     <div className='image-container'>
-                                        <img src={post.thumbnail} alt=""/>
+                                        <img src={post.thumbnail} alt="" />
                                     </div>
                                     <div className='content'>
                                         <h2>
-                                           <a className='link' href={post.url}>{post.title}</a>
+                                            <a className='link' href={post.url}>{post.title}</a>
                                         </h2>
                                         <p>
-                                           {post.title}
+                                            {post.title}
                                         </p>
                                         <span>
-                                           <i class="fa fa-clock-o"></i>{new Date(post.posted).toDateString()}
+                                            <i class="fa fa-clock-o"></i>{new Date(post.posted).toDateString()}
                                         </span>
-                                       <a href={post.sourceUrl} className='readmore'>READ MORE</a>
+                                        <a href={post.sourceUrl} className='readmore'>READ MORE</a>
                                     </div>
                                 </div>
                             )
                         })
                     }
-                </div> 
+                </div>
             </div>
             <div className='testimonials'>
                 <h2 className='title'>What clients say</h2>
@@ -212,10 +212,10 @@ const Home = ({data}) => {
                             return (
                                 <div className='testimonial'>
                                     <span>
-                                        <img src={testimonial.img} alt=""/>
+                                        <img src={testimonial.img} alt="" />
                                         <h2 id='name'>{testimonial.name}</h2>
                                     </span>
-                                    
+
                                     <div className='content'>
                                         <h1 >{testimonial.title}</h1>
                                         <p>

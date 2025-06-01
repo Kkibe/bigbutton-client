@@ -1,5 +1,6 @@
+import React from 'react';
 import PostCard from '../components/PostCard';
-const Blogs = ({data}) => {
+const Blogs = ({ data }) => {
     return (
         <div className='blogs page'>
             <div className="banner">
@@ -8,7 +9,7 @@ const Blogs = ({data}) => {
             <div className="wrapper">
                 <div className="posts-container">
                     {data && data.map(blog => {
-                        return <PostCard key={blog.id} data={blog}/>
+                        return <PostCard key={blog.id} data={blog} />
                     })}
                 </div>
                 <div className="tags-container">
@@ -17,7 +18,7 @@ const Blogs = ({data}) => {
                     })}
                 </div>
             </div>
-            
+
         </div>
     );
 }
